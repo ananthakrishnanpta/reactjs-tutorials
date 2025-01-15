@@ -1,6 +1,7 @@
 # React Tutorial
 
-`Author` - Anantha Krishnan PTA
+`Author` - [Anantha Krishnan PTA](https://www.linkedin.com/in/anantha-krishnan-2603111)
+
 `About the author`:
 Anantha Krishnan PTA is a developer with experience working as a data scientist, web developer, trainer, and researcher. His research interests include audio programming, computer audio, data science, integration of machine learning with web technologies, and VST development.
 
