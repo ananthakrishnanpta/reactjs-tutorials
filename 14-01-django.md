@@ -416,8 +416,6 @@ export default Payment;
 
 2. Deploy the build folder on **Netlify**:
    - Create a **Netlify account** and connect it to your **GitHub repository
-
-**.
    - Set up your **React app** deployment with automatic deployments from GitHub.
 
 ---
