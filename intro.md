@@ -1,7 +1,4 @@
 # **ReactJS Tutorial**
-
-Welcome to the **ReactJS Tutorial**! This guide is designed to help you learn ReactJS from the ground up with detailed explanations, practical examples, and step-by-step guidance.
-
 ---
 
 ## **Table of Contents**
