@@ -1,7 +1,3 @@
-Here’s the complete **React with Vite Tutorial** in Markdown format, including instructions to push the project to GitHub Pages:
-
----
-
 # React with Vite Tutorial (with GitHub Pages Deployment)
 
 ## Prerequisites
@@ -129,7 +125,7 @@ The output will be generated in the `dist` folder.
 ## 8. Deploy to GitHub Pages
 
 ### Step 1: Initialize a Git Repository
-
+- You should run the git init command in the root directory of your project, where the package.json file is located.
 If you haven’t initialized a Git repository, run:
 
 ```bash
