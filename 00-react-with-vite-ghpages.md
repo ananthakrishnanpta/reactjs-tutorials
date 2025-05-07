@@ -172,6 +172,28 @@ Add the following fields to `package.json`:
   "deploy": "npm run build && gh-pages -d dist"
 }
 ```
+---
+
+  ### Update `vite.config.js`
+
+Open `vite.config.js` and configure the `base` property. The `base` property is crucial for GitHub Pages to serve the app correctly from the subpath where it’s deployed.
+
+```javascript
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+
+export default defineConfig({
+  plugins: [react()],
+  base: '/<your-repo-name>/', // Replace with your repo name
+});
+```
+
+For example, if your repository name is `my-react-app`, set:
+
+```javascript
+base: '/my-react-app/';
+```
+
 
 ### Step 5: Deploy to GitHub Pages
 
@@ -190,5 +212,16 @@ Visit your app at:
 ```
 https://your-username.github.io/my-react-app
 ```
+
+## Troubleshooting: Blank Page Issue
+
+If your deployed page is blank:
+
+1. **Check `vite.config.js`:** Ensure the `base` property is correctly set to `/<your-repo-name>/`.
+2. **Clear Browser Cache:** If changes aren’t reflecting, clear your cache or try an incognito browser window.
+3. **Rebuild and Redeploy:** Run `npm run build` and `npm run deploy` again.
+4. **Verify GitHub Pages Configuration:** Ensure the `gh-pages` branch is selected as the source in GitHub Pages settings.
+
+
 
 ---
