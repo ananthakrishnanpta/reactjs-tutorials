@@ -95,7 +95,8 @@ python manage.py migrate
 
 * **`products/serializers.py`**:
 
-  ```python
+```python
+  
 from rest_framework import serializers
 from .models import Product
 
@@ -116,7 +117,8 @@ class ProductSerializer(serializers.ModelSerializer):
 
 * **`products/views.py`**:
 
-  ```python
+```python
+
 from rest_framework.response import Response
 from rest_framework.views import APIView
 from .models import Product
