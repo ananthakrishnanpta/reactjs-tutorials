@@ -96,28 +96,38 @@ python manage.py migrate
 * **`products/serializers.py`**:
 
   ```python
-  from rest_framework import serializers
-  from .models import Product
+from rest_framework import serializers
+from .models import Product
 
-  class ProductSerializer(serializers.ModelSerializer):
-      class Meta:
-          model = Product
-          fields = '__all__'
+class ProductSerializer(serializers.ModelSerializer):
+    image = serializers.SerializerMethodField()
+
+    def get_image(self, obj):
+        request = self.context.get('request')
+        if obj.image:
+            return request.build_absolute_uri(obj.image.url)
+        return None
+
+    class Meta:
+        model = Product
+        fields = '__all__'
+
   ```
 
 * **`products/views.py`**:
 
   ```python
-  from rest_framework.views import APIView
-  from rest_framework.response import Response
-  from .models import Product
-  from .serializers import ProductSerializer
+from rest_framework.response import Response
+from rest_framework.views import APIView
+from .models import Product
+from .serializers import ProductSerializer
 
-  class ProductListView(APIView):
-      def get(self, request):
-          products = Product.objects.all()
-          serializer = ProductSerializer(products, many=True)
-          return Response(serializer.data)
+class ProductListView(APIView):
+    def get(self, request):
+        products = Product.objects.all()
+        serializer = ProductSerializer(products, many=True, context={'request': request})
+        return Response(serializer.data)
+
   ```
 
 * **`products/urls.py`**:
