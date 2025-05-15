@@ -78,10 +78,17 @@ from django.db import models
 class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=10, decimal_places=2)
-    image = models.URLField()  # URL for product image
+    image = models.ImageField(upload_to='products/')   # path for product image
 
     def __str__(self):
         return self.name
+```
+Add following lines to settings.py:
+```python
+STATIC_URL = 'static/'
+
+MEDIA_ROOT = BASE_DIR/'media'
+MEDIA_URL = '/'
 ```
 
 Run migrations:
